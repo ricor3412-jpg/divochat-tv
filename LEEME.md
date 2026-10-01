@@ -71,6 +71,19 @@ node tools/probar-video.mjs   # interludio con los dos videos → out/v1_…, v2
 Las pruebas avanzan la animación paso a paso (`divoDebug.avanzar`), porque el navegador de prueba
 no tiene tarjeta gráfica y va lento; en el TV corre a velocidad normal.
 
+## Comportamientos
+
+| Qué | Cuándo | Cómo se ve |
+|---|---|---|
+| **Come** | Una UTM pasa a su alcance | La sigue con la mirada, cierra los ojos (esfuerzo), la atrae y se la traga: ^ ^ feliz |
+| **Se llena** | Ráfaga de 6–12 UTMs | Crece con cada bocado (+55 % máx.); al terminar, feliz y vuelve a su tamaño |
+| **UTM dorada** | Rara: 12 % de probabilidad, como mucho una cada 40 s | "💰 venta confirmada", "💰 compra…", "⭐ lead calificado" con brillo que late. Divo la mira con **asombro ✱ ✱**, la atrae desde más lejos (nunca se le escapa) y al tragarla saltan chispas doradas |
+| **Siesta** | 9 s sin UTMs en pantalla | Ojos cerrados, flota más bajo y lento, ladeado, salen "z". La siguiente UTM lo **despierta de golpe**: saltito y asombro |
+| **Video** | Cada 5 min | Se esconde hacia abajo, corre el video completo y vuelve |
+
+El ataque de UTMs se bajó el 2026-10-01 para que haya pausas largas (20–32 s) en las que se duerme.
+Probar sin esperar: `node tools/probar-siesta.mjs` (siesta + dorada) y `node tools/probar.mjs` (ráfaga).
+
 ## Decisiones
 
 - **Divo nunca se deforma:** crece y late con escala uniforme.
