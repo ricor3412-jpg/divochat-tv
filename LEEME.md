@@ -13,6 +13,17 @@ sobre el fondo oscuro de marca, así que el regreso al degradado no se nota; lue
 > **Intervalo: 5 minutos** entre videos (`interludeEvery: 300` en `src/main.js`). Para probar sin
 > esperar: `index.html?cada=30` o la tecla `V`.
 
+## Enlace público
+
+**https://ricor3412-jpg.github.io/divochat-tv/** · GitHub Pages, repo público
+`ricor3412-jpg/divochat-tv` (publicado el 2026-10-01). Desde un enlace web, el navegador pide un
+toque ("Toca para iniciar") para permitir el sonido.
+
+**Actualizar:** editar `src/main.js` → `npm run build` → `git add -A; git commit -m "…"; git push`.
+Pages se reconstruye solo en 1–2 min. Por `.gitignore` solo se sube lo que la página necesita
+(`index.html`, `app.js`, `assets/`, `media/`, `iniciar-tv.bat`, este LEEME); el código fuente y las
+herramientas quedan en local. Autor de los commits: `ricor3412-jpg`, sin trailers de coautoría.
+
 ## Cómo ponerlo en el TV
 
 **Lo ideal es un computador o mini PC conectado al TV por HDMI.** El navegador de un Smart TV
