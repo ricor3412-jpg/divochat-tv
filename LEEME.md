@@ -81,7 +81,7 @@ no tiene tarjeta gráfica y va lento; en el TV corre a velocidad normal.
 | **Siesta** | 9 s sin UTMs en pantalla | Ojos cerrados, flota más bajo y lento, ladeado, salen "z". La siguiente UTM lo **despierta de golpe**: saltito y asombro |
 | **Video** | Cada 5 min | Se esconde hacia abajo, corre el video completo y vuelve |
 
-El ataque de UTMs se bajó el 2026-10-01 para que haya pausas largas (20–32 s) en las que se duerme.
+El ataque de UTMs se bajó el 2026-10-01 para que haya pausas (13–17 s, 1 de cada 5 olas) en las que se duerme una siesta corta de ~4–8 s.
 Probar sin esperar: `node tools/probar-siesta.mjs` (siesta + dorada) y `node tools/probar.mjs` (ráfaga).
 
 ## Decisiones
