@@ -1,0 +1,9 @@
+# Se publica solo lo que la página necesita (GitHub Pages): index.html, app.js, assets/, media/.
+# El código fuente y las herramientas se quedan en local.
+node_modules/
+out/
+src/
+tools/
+package.json
+package-lock.json
+.impeccable/

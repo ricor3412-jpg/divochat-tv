@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DivoChat · Pantalla</title>
+<style>
+  @font-face { font-family: "Geist"; src: url("assets/Geist-Regular.woff2") format("woff2"); font-weight: 400; }
+  @font-face { font-family: "Geist"; src: url("assets/Geist-Bold.woff2") format("woff2"); font-weight: 700; }
+  :root { --brand: #0e97f3; --violet: #0b5fa5; --sun: #7fd0ff; --ink: #01040d; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; overflow: hidden; background: var(--ink); cursor: none; }
+
+  /* Fondo degradado negro con el resplandor azul del manual de marca (--g-night-panel, más tenue). */
+  #bg { position: fixed; inset: 0;
+    background: radial-gradient(ellipse 62% 55% at 50% 62%, rgba(14,151,243,.30) 0%, rgba(11,95,165,.18) 40%, rgba(3,11,31,0) 72%),
+                linear-gradient(160deg, #01040d 0%, #020814 45%, #04172d 100%); }
+  /* Destello detrás de Divo cuando se traga una UTM (--glow lo sube el script). */
+  #glow { position: fixed; left: 50%; top: 50%; width: 70vmin; height: 70vmin; margin: -35vmin 0 0 -35vmin; border-radius: 50%;
+    background: radial-gradient(circle, rgba(127,208,255,.55) 0%, rgba(14,151,243,.25) 40%, rgba(14,151,243,0) 70%);
+    opacity: var(--glow, 0); transform: scale(calc(1 + var(--glow, 0) * .25)); pointer-events: none; }
+
+  #utms { position: fixed; inset: 0; pointer-events: none; }
+  .utm { position: absolute; left: 0; top: 0; white-space: nowrap; will-change: transform, opacity;
+    padding: .55em 1.05em; border-radius: 999px; font: 400 clamp(14px, 1.2vw, 34px)/1 "Geist", system-ui, sans-serif; letter-spacing: .01em;
+    color: #e8f4ff; background: rgba(6,14,30,.78); border: 1px solid rgba(127,208,255,.42);
+    box-shadow: 0 0 1.4em rgba(14,151,243,.32), inset 0 0 .8em rgba(14,151,243,.12); }
+  .utm b { color: var(--sun); font-weight: 700; }
+
+  #divo { position: fixed; inset: 0; }
+  #divo canvas { display: block; width: 100%; height: 100%; }
+
+  /* Capa de video: entra con un revelado circular desde abajo (por donde se fue Divo). */
+  #videoLayer { position: fixed; inset: 0; background: #000; clip-path: circle(0% at 50% 100%); visibility: hidden; }
+  #videoLayer video { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  #start { position: fixed; inset: 0; display: grid; place-items: center; background: rgba(1,4,13,.86); cursor: pointer; z-index: 10; }
+  #start div { text-align: center; color: #e8f4ff; font: 400 clamp(18px, 1.6vw, 40px) "Geist", system-ui; }
+  #start b { display: block; font-size: 2.2em; margin-bottom: .4em; }
+  #start span { display: inline-block; margin-top: 1.2em; padding: .7em 1.6em; border-radius: 999px; background: var(--brand); font-weight: 700; }
+</style>
+</head>
+<body>
+<div id="bg"></div>
+<div id="glow"></div>
+<div id="utms"></div>
+<div id="divo"></div>
+<div id="videoLayer"><video id="vid" playsinline preload="auto"></video></div>
+<div id="start"><div><b>DivoChat</b>Pantalla en bucle · el video sale cada 5 minutos<br><span>Toca para iniciar</span></div></div>
+<!-- app.js = src/main.js empaquetado con three.js (npm run build). Script clásico: abre con doble clic. -->
+<script src="app.js"></script>
+</body>
+</html>
